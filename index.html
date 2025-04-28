@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation App</title>
+    <link rel="stylesheet" href="style.css">
+
+    <body>
+        <h1>Find Your Perfect Book</h1>
+    
+        <form id="book-form">
+            <label for="genre">Choose Genre:</label>
+            <select id="genre">
+                <option value="">--Select Genre--</option>
+                <option value="fiction">Fiction</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="mystery">Mystery</option>
+                <option value="historical">Historical</option>
+                
+            </select>
+            
+    
+            <label for="author">Choose Author:</label>
+            <select id="author">
+                <option value="">--Select Author--</option>
+                <option value="arthur blackwood">Arthur Blackwood</option>
+                <option value="eleanor vance">Eleanor Vance</option>
+                <option value="jasper thorne">Jasper Thorne</option>
+                <option value="isabelle moreau">Isabelle Moreau</option>
+            </select>
+            
+    
+            <label for="min-price">Minimum Price (£):</label>
+            <input type="number" id="min-price" min="0">
+    
+            <label for="max-price">Maximum Price (£):</label>
+            <input type="number" id="max-price" min="0">
+    
+            <label for="language">Language:</label>
+            <input type="text" id="language" placeholder="e.g. English">
+    
+            <label for="format">Format:</label>
+            <select id="format">
+                <option value="">--Select Format--</option>
+                <option value="ebook">Ebook</option>
+                <option value="paperback">Paperback</option>
+                <option value="hardcover">Hardcover</option>
+            </select>
+    
+            <button type="submit">Get Recommendations</button>
+        </form>
+    
+        <section id="recommendations">
+            <h2>Recommended Books:</h2>
+            <ul id="book-list"></ul>
+        </section>
+    
+        <script src="app.js"></script>
+    </body>
+    
+    </html>
