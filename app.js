@@ -52,56 +52,80 @@ const books = [
     { title: "The Lighthouse Keeper's Daughter", author: "Isabelle Moreau", genre: "fiction", price: 57.50, language: "English", format: "paperback", description: "A captivating story of solitude, resilience, and the sea." }
 ];
 
-  
-  const form = document.getElementById("book-form");
-  const bookList = document.getElementById("book-list");
-  
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-  
-    const genreInput = document.getElementById("genre").value;
-    const authorInput = document.getElementById("author").value;
-    const minPriceInput = document.getElementById("min-price").value;
-    const maxPriceInput = document.getElementById("max-price").value;
-    const languageInput = document.getElementById("language").value.toLowerCase();
-    const formatInput = document.getElementById("format").value;
-  
-    let minPrice = +minPriceInput;
-    let maxPrice = +maxPriceInput;
-  
-    if (isNaN(minPrice)) {
-      minPrice = 0;
-    }
-  
-    if (isNaN(maxPrice)) {
-      maxPrice = 9999;
-    }
-  
-    const filteredBooks = books.filter(function (book) {
-      if (genreInput !== "" && book.genre !== genreInput) return false;
-      if (authorInput !== "" && book.author.toLowerCase() !== authorInput) return false;
-      if (book.price < minPrice || book.price > maxPrice) return false;
-      if (languageInput !== "" && book.language.toLowerCase() !== languageInput) return false;
-      if (formatInput !== "" && book.format !== formatInput) return false;
-      return true;
-    });
-  
-    displayBooks(filteredBooks);
-  });
-  
-  function displayBooks(bookArray) {
-    let listHTML = "";
-    if (bookArray.length === 0) {
-      listHTML = "<li>No books found matching your preferences.</li>";
-    } else {
-      for (let i = 0; i < bookArray.length; i++) {
-        const book = bookArray[i];
-        listHTML += "<li><strong>" + book.title + "</strong> by " + book.author + "<br>" +
-                     "<em>Price:</em> £" + book.price + " | <em>Format:</em> " + book.format +
-                     " | <em>Language:</em> " + book.language + "<br>" +
-                     "<p>" + book.description + "</p></li>";
-      }
-    }
-    bookList.innerHTML = listHTML;
+
+// get DOM elements
+const form = document.getElementById("book-form");
+const bookList = document.getElementById("book-list");
+const errorMessage = document.getElementById("error-message");
+
+// handle form submission
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  errorMessage.textContent = "";
+
+  const genre = document.getElementById("genre").value;
+  const author = document.getElementById("author").value.trim().toLowerCase();
+  const minPriceStr = document.getElementById("min-price").value.trim();
+  const maxPriceStr = document.getElementById("max-price").value.trim();
+  const language = document.getElementById("language").value.trim().toLowerCase();
+  const format = document.getElementById("format").value;
+
+  if (minPriceStr && !/^\d+(\.\d{2})$/.test(minPriceStr)) {
+    errorMessage.textContent = "Minimum price must be in format 0.00";
+    return;
   }
-  
+
+  if (maxPriceStr && !/^\d+(\.\d{2})$/.test(maxPriceStr)) {
+    errorMessage.textContent = "Maximum price must be in format 0.00";
+    return;
+  }
+
+  const minPrice = minPriceStr ? parseFloat(minPriceStr) : 0;
+  const maxPrice = maxPriceStr ? parseFloat(maxPriceStr) : Infinity;
+
+  const results = books.filter(book => {
+    if (genre && book.genre !== genre) return false;
+    if (author && !book.author.toLowerCase().includes(author)) return false;
+    if (book.price < minPrice || book.price > maxPrice) return false;
+    if (language && book.language.toLowerCase() !== language) return false;
+    if (format && book.format !== format) return false;
+    return true;
+  });
+
+  displayBooks(results);
+});
+
+// display books
+function displayBooks(bookArray) {
+  bookList.innerHTML = "";
+
+  if (bookArray.length === 0) {
+    const li = document.createElement("li");
+    li.textContent = "No books found matching your criteria.";
+    bookList.appendChild(li);
+    return;
+  }
+
+  bookArray.forEach(book => {
+    const li = document.createElement("li");
+
+    const title = document.createElement("strong");
+    title.textContent = book.title;
+
+    const authorText = document.createTextNode(` by ${book.author}`);
+
+    const details = document.createElement("div");
+    details.innerHTML = `<em>£${book.price.toFixed(2)}</em> | ${book.format} | ${book.language}`;
+
+    const description = document.createElement("p");
+    description.textContent = book.description;
+
+    li.appendChild(title);
+    li.appendChild(authorText);
+    li.appendChild(document.createElement("br"));
+    li.appendChild(details);
+    li.appendChild(description);
+
+    bookList.appendChild(li);
+  });
+}
