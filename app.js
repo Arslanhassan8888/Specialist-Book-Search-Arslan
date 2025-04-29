@@ -30,6 +30,7 @@ const books = [
 const form = document.getElementById("book-form");
 const bookList = document.getElementById("book-list");
 const errorMessage = document.getElementById("error-message");
+const resetButton = document.getElementById("reset-button");
 
 // handle form submission
 form.addEventListener("submit", function (e) {
@@ -40,7 +41,7 @@ form.addEventListener("submit", function (e) {
   const author = document.getElementById("author").value.trim().toLowerCase();
   const minPriceStr = document.getElementById("min-price").value.trim();
   const maxPriceStr = document.getElementById("max-price").value.trim();
-  const language = document.getElementById("language").value.trim().toLowerCase();
+  const language = document.getElementById("language").value;
   const format = document.getElementById("format").value;
 
   if (minPriceStr && !/^\d+(\.\d{2})$/.test(minPriceStr)) {
@@ -60,7 +61,7 @@ form.addEventListener("submit", function (e) {
     if (genre && book.genre !== genre) return false;
     if (author && !book.author.toLowerCase().includes(author)) return false;
     if (book.price < minPrice || book.price > maxPrice) return false;
-    if (language && book.language.toLowerCase() !== language) return false;
+    if (language && book.language !== language) return false;
     if (format && book.format !== format) return false;
     return true;
   });
@@ -68,7 +69,7 @@ form.addEventListener("submit", function (e) {
   displayBooks(results);
 });
 
-// display books
+// display book list
 function displayBooks(bookArray) {
   bookList.innerHTML = "";
 
@@ -102,3 +103,10 @@ function displayBooks(bookArray) {
     bookList.appendChild(li);
   });
 }
+
+// handle form reset
+resetButton.addEventListener("click", function () {
+  form.reset();
+  bookList.innerHTML = "";
+  errorMessage.textContent = "";
+});
