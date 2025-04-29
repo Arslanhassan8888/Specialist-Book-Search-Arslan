@@ -93,7 +93,9 @@ form.addEventListener("submit", function (e) {
       const authorText = document.createTextNode(` by ${book.author}`);
 
       const details = document.createElement("div");
-      details.innerHTML = `<em>£${book.price.toFixed(2)}</em> | ${book.format} | ${book.language} | Rating: ${book.rating}`;
+      const stars = getStars(book.rating);
+      details.innerHTML = `<em>£${book.price.toFixed(2)}</em> | ${book.format} | ${book.language} | Rating: ${book.rating}/5 ${stars}`;
+      
 
       const description = document.createElement("p");
       description.textContent = book.description;
@@ -114,3 +116,10 @@ resetButton.addEventListener("click", function () {
   bookList.innerHTML = "";
   errorMessage.textContent = "";
 });
+
+function getStars(rating) {
+  const fullStars = Math.floor(rating);
+  const stars = Math.min(Math.max(fullStars, 0), 5);
+  const empty = 5 - stars;
+  return '★'.repeat(stars) + '☆'.repeat(empty);
+}
