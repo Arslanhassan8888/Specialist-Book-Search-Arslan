@@ -156,3 +156,21 @@ input, select, button {
     max-width: 700px;
     text-align: justify;
 }
+
+/* Create Profile Button Styling */
+#create-profile-button {
+    background-color: #28a745; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    display: none; /* Hidden at first */
+  }
+  
+  #create-profile-button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
