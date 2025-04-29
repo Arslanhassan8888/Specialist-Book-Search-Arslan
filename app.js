@@ -25,7 +25,6 @@ const books = [
   { title: "Garden Secrets", author: "Emily Rowe", genre: "fiction", price: 15.50, language: "English", format: "ebook", description: "New life blooms in hidden gardens." }
 ];
 
-
 // get DOM elements
 const form = document.getElementById("book-form");
 const bookList = document.getElementById("book-list");
