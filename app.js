@@ -127,7 +127,12 @@ form.addEventListener("submit", function (e) {
       li.appendChild(document.createElement("br")); // Line break
       li.appendChild(details);     // Insert book details
       li.appendChild(description); // Insert book description
-
+      
+      const addButton = document.createElement("button");
+      addButton.textContent = "Add to Wish List";
+      addButton.addEventListener("click", () => addToWishList(book));
+      li.appendChild(addButton);
+    
       bookList.appendChild(li); // Finally append the whole <li> into the book list (ul)
     });
   }
@@ -152,3 +157,22 @@ function getStars(rating) {
   return '★'.repeat(stars) + '☆'.repeat(empty); // Return star pattern
 }
 
+/*
+  Function to handle Add to Wish List button
+*/
+function addToWishList(book) {
+  const userProfile = localStorage.getItem("userProfile");
+
+  if (!userProfile) {
+    alert("You must create a profile first to save books to your wish list!");
+
+    const profileBtn = document.getElementById("create-profile-button");
+    if (profileBtn) {
+      profileBtn.style.display = "inline-block"; // Make profile button visible
+    }
+    return; // Stop, don't add the book
+  }
+
+  // (Later steps will code actual adding to wishlist)
+  console.log("Profile exists! Ready to add book.");
+}
