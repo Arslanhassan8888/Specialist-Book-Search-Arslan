@@ -123,3 +123,4 @@ function getStars(rating) {
   const empty = 5 - stars;
   return '★'.repeat(stars) + '☆'.repeat(empty);
 }
+
