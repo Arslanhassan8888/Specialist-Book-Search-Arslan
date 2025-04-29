@@ -164,15 +164,21 @@ function addToWishList(book) {
   const userProfile = localStorage.getItem("userProfile");
 
   if (!userProfile) {
-    alert("You must create a profile first to save books to your wish list!");
+    // Show warning message on screen
+    const warning = document.getElementById("profile-warning");
+    if (warning) {
+      warning.style.display = "block";
+    }
 
+    // Show the Create Profile button
     const profileBtn = document.getElementById("create-profile-button");
     if (profileBtn) {
-      profileBtn.style.display = "inline-block"; // Make profile button visible
+      profileBtn.style.display = "inline-block";
     }
-    return; // Stop, don't add the book
+
+    return;
   }
 
-  // (Later steps will code actual adding to wishlist)
-  console.log("Profile exists! Ready to add book.");
+  // Proceed later to save the book to the wish list
+  console.log("Profile exists — book can be saved.");
 }
