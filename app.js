@@ -1,3 +1,13 @@
+
+/*
+  Book Search and Recommendation Application
+  -------------------------------------------
+  This script allows users to search for books based on genre, author,
+  price range, language, and format. It highlights the top-rated book
+  among the filtered results. Users can also reset the form easily.
+*/
+
+// Book data containing title, author, genre, price, language, format, description and rating
 const books = [
   { title: "Shadow in the Attic", author: "Lena Blackwood", genre: "mystery", price: 15.00, language: "English", format: "paperback", description: "A chilling mystery unfolds in an abandoned house. Dive deeper into an unforgettable story filled with emotion, intrigue, and unexpected turns.", rating: 4.4 },
   { title: "Whispers Beyond", author: "Elena Vance", genre: "mystery", price: 22.50, language: "Arabic", format: "hardcover", description: "Ancient secrets hidden under moonlight. Dive deeper into an unforgettable story filled with emotion, intrigue, and unexpected turns.", rating: 4.2 },
@@ -25,16 +35,24 @@ const books = [
   { title: "Garden Secrets", author: "Emily Rowe", genre: "fiction", price: 15.50, language: "English", format: "ebook", description: "New life blooms in hidden gardens. Dive deeper into an unforgettable story filled with emotion, intrigue, and unexpected turns.", rating: 4.2 }
 ];
 
+// Get elements from the page
+const form = document.getElementById("book-form"); // Form element
+const genreSelect = document.getElementById("genre"); // Genre dropdown
+const bookList = document.getElementById("book-list"); // List to display books
+const errorMessage = document.getElementById("error-message"); // Error message block
+const resetButton = document.getElementById("reset-button"); // Reset button
 
-const form = document.getElementById("book-form");
-const bookList = document.getElementById("book-list");
-const errorMessage = document.getElementById("error-message");
-const resetButton = document.getElementById("reset-button");
-
+/*
+  Event listener for form submission
+  - Validate input for price
+  - Filter books based on user selections
+  - Highlight the highest-rated book
+*/
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  errorMessage.textContent = "";
+  e.preventDefault(); // Prevent default form submit
+  errorMessage.textContent = ""; // Clear previous errors
 
+  // Get user inputs
   const genre = document.getElementById("genre").value;
   const author = document.getElementById("author").value.trim().toLowerCase();
   const minPriceStr = document.getElementById("min-price").value.trim();
@@ -42,6 +60,7 @@ form.addEventListener("submit", function (e) {
   const language = document.getElementById("language").value;
   const format = document.getElementById("format").value;
 
+  // Validate price fields
   if (minPriceStr && !/^\d+(\.\d{2})$/.test(minPriceStr)) {
     errorMessage.textContent = "Minimum price must be in format 0.00";
     return;
@@ -51,9 +70,10 @@ form.addEventListener("submit", function (e) {
     return;
   }
 
-  const min = parseFloat(minPriceStr) || 0;
-  const max = parseFloat(maxPriceStr) || Infinity;
+  const min = parseFloat(minPriceStr) || 0; // Default to 0 if not given
+  const max = parseFloat(maxPriceStr) || Infinity; // Default to no upper limit
 
+  // Filter the books based on criteria
   const filtered = books.filter(book => {
     if (genre && book.genre !== genre) return false;
     if (author && !book.author.toLowerCase().includes(author)) return false;
@@ -63,7 +83,7 @@ form.addEventListener("submit", function (e) {
     return true;
   });
 
-  // Find top-rated book
+  // Find top-rated book among the filtered
   let topBook = null;
   let highestRating = 0;
   filtered.forEach(book => {
@@ -73,54 +93,62 @@ form.addEventListener("submit", function (e) {
     }
   });
 
-  bookList.innerHTML = "";
+  bookList.innerHTML = ""; // Clear previous results
 
+  // Show message if no matches found
   if (filtered.length === 0) {
-    const li = document.createElement("li");
-    li.textContent = "No books found matching your criteria.";
-    bookList.appendChild(li);
+    const li = document.createElement("li"); // Create a list item
+    li.textContent = "No books found matching your criteria."; // Set its text
+    bookList.appendChild(li); // Append the list item inside bookList using appendChild
   } else {
+    // Display matched books
     filtered.forEach(book => {
-      const li = document.createElement("li");
+      const li = document.createElement("li"); // Create a list item for each book
 
       if (book === topBook) {
-        li.classList.add("top-pick");
+        li.classList.add("top-pick"); // Highlight top-rated book
       }
 
-      const title = document.createElement("strong");
-      title.textContent = book.title;
+      const title = document.createElement("strong"); // Create <strong> for book title
+      title.textContent = book.title; // Set book title text
 
-      const authorText = document.createTextNode(` by ${book.author}`);
+      const authorText = document.createTextNode(` by ${book.author}`); // Create text node for author
 
-      const details = document.createElement("div");
-      const stars = getStars(book.rating);
+      const details = document.createElement("div"); // Create div for book details (price, format, etc.)
+      const stars = getStars(book.rating); // Get visual star rating
       details.innerHTML = `<em>£${book.price.toFixed(2)}</em> | ${book.format} | ${book.language} | Rating: ${book.rating}/5 ${stars}`;
-      
 
-      const description = document.createElement("p");
-      description.textContent = book.description;
+      const description = document.createElement("p"); // Create <p> for book description
+      description.textContent = book.description; // Set description text
 
-      li.appendChild(title);
-      li.appendChild(authorText);
-      li.appendChild(document.createElement("br"));
-      li.appendChild(details);
-      li.appendChild(description);
+      // Append child elements to the <li> (building structure)
+      li.appendChild(title);       // Insert title inside <li>
+      li.appendChild(authorText);  // Insert author text
+      li.appendChild(document.createElement("br")); // Line break
+      li.appendChild(details);     // Insert book details
+      li.appendChild(description); // Insert book description
 
-      bookList.appendChild(li);
+      bookList.appendChild(li); // Finally append the whole <li> into the book list (ul)
     });
   }
 });
 
+// Event listener to clear form and book list when reset button is clicked
 resetButton.addEventListener("click", function () {
-  form.reset();
-  bookList.innerHTML = "";
-  errorMessage.textContent = "";
+  form.reset(); // Reset form fields
+  bookList.innerHTML = ""; // Clear displayed books
+  errorMessage.textContent = ""; // Clear error messages
 });
 
+/*
+  Function to get star rating
+  - Full stars (★) based on whole number
+  - Empty stars (☆) for the rest
+*/
 function getStars(rating) {
-  const fullStars = Math.floor(rating);
-  const stars = Math.min(Math.max(fullStars, 0), 5);
-  const empty = 5 - stars;
-  return '★'.repeat(stars) + '☆'.repeat(empty);
+  const fullStars = Math.floor(rating); // Count of full stars
+  const stars = Math.min(Math.max(fullStars, 0), 5); // Limit to 5 stars max
+  const empty = 5 - stars; // Remaining empty stars
+  return '★'.repeat(stars) + '☆'.repeat(empty); // Return star pattern
 }
 
