@@ -1,92 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arslan's Library</title>
-  <!-- Link to external CSS file -->
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arslan's Library</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- Main Header Section -->
-  <header>
-    <h1 id="main-title">WELCOME TO ARSLAN'S LIBRARY</h1>
-  </header>
+    <!-- Main Header Section -->
+    <header>
+        <h1 id="main-title">WELCOME TO ARSLAN'S LIBRARY</h1>
+    </header>
 
-  <!-- History Section with Image and Text -->
-  <section id="history-section">
-    <h2>OUR HISTORY</h2>
-    <img src="Library_pic.jpg" alt="Library Image" id="library-image" />
-    <p id="history-text">
-      Established in 1952, Arslan’s Library has grown from a small community space into a treasure trove of literature from around the world.
-      With a passion for storytelling and knowledge, our library preserves the spirit of discovery, imagination, and learning for generations to come.
-      Over the decades, we have expanded our collection to include rare manuscripts, modern bestsellers, and digital archives.
-      Today, Arslan's Library welcomes thousands of visitors every year, inspiring readers of all ages to embark on new journeys through books.
-    </p>
-  </section>
+    <!-- History Section with Image and Text -->
+    <section id="history-section">
+        <h2>OUR HISTORY</h2>
+        <img src="Library_pic.jpg" alt="Library Image" id="library-image" />
+        <p id="history-text">
+            Established in 1952, Arslan’s Library has grown from a small community space into a treasure trove of
+            literature from around the world.
+            With a passion for storytelling and knowledge, our library preserves the spirit of discovery, imagination,
+            and learning for generations to come.
+            Over the decades, we have expanded our collection to include rare manuscripts, modern bestsellers, and
+            digital archives.
+            Today, Arslan's Library welcomes thousands of visitors every year, inspiring readers of all ages to embark
+            on new journeys through books.
+        </p>
+    </section>
 
-  <!-- Book Search Form Section -->
-  <form id="book-form">
-    <h2 id="form-title">Find Your Perfect Book</h2>
+    <!-- Book Search Form Section -->
+    <form id="book-form">
+        <h2 id="form-title">Find Your Perfect Book</h2>
 
-    <!-- Genre Dropdown -->
-    <label for="genre">Genre:</label>
-    <select id="genre">
-      <option value="">--Select Genre--</option>
-      <option value="fiction">Fiction</option>
-      <option value="non-fiction">Non-Fiction</option>
-      <option value="fantasy">Fantasy</option>
-      <option value="mystery">Mystery</option>
-      <option value="historical">Historical</option>
-    </select>
+        <!-- Genre Dropdown -->
+        <label for="genre">Genre:</label>
+        <select id="genre">
+            <option value="">--Select Genre--</option>
+            <option value="fiction">Fiction</option>
+            <option value="non-fiction">Non-Fiction</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="mystery">Mystery</option>
+            <option value="historical">Historical</option>
+        </select>
 
-    <!-- Author Input -->
-    <label for="author">Author:</label>
-    <input type="text" id="author" placeholder="e.g. Clara Moore" />
+        <!-- Author Input -->
+        <label for="author">Author:</label>
+        <input type="text" id="author" placeholder="e.g. Clara Moore" />
 
-    <!-- Minimum Price Input -->
-    <label for="min-price">Minimum Price (£):</label>
-    <input type="text" id="min-price" placeholder="e.g. 10.00" />
+        <!-- Minimum Price Input -->
+        <label for="min-price">Minimum Price (£):</label>
+        <input type="text" id="min-price" placeholder="e.g. 10.00" />
 
-    <!-- Maximum Price Input -->
-    <label for="max-price">Maximum Price (£):</label>
-    <input type="text" id="max-price" placeholder="e.g. 25.00" />
+        <!-- Maximum Price Input -->
+        <label for="max-price">Maximum Price (£):</label>
+        <input type="text" id="max-price" placeholder="e.g. 25.00" />
 
-    <!-- Language Dropdown -->
-    <label for="language">Language:</label>
-    <select id="language">
-      <option value="">--Select Language--</option>
-      <option value="English">English</option>
-      <option value="French">French</option>
-      <option value="Arabic">Arabic</option>
-    </select>
+        <!-- Language Dropdown -->
+        <label for="language">Language:</label>
+        <select id="language">
+            <option value="">--Select Language--</option>
+            <option value="English">English</option>
+            <option value="French">French</option>
+            <option value="Arabic">Arabic</option>
+        </select>
 
-    <!-- Format Dropdown -->
-    <label for="format">Format:</label>
-    <select id="format">
-      <option value="">--Select Format--</option>
-      <option value="ebook">Ebook</option>
-      <option value="paperback">Paperback</option>
-      <option value="hardcover">Hardcover</option>
-    </select>
+        <!-- Format Dropdown -->
+        <label for="format">Format:</label>
+        <select id="format">
+            <option value="">--Select Format--</option>
+            <option value="ebook">Ebook</option>
+            <option value="paperback">Paperback</option>
+            <option value="hardcover">Hardcover</option>
+        </select>
 
-    <!-- Search and Reset Buttons -->
-    <button type="submit" id="search-button">Search Books</button>
-    <button type="button" id="reset-button">Reset Form</button>
+        <!-- Search and Reset Buttons -->
+        <button type="submit" id="search-button">Search Books</button>
+        <button type="button" id="reset-button">Reset Form</button>
 
-    <!-- Error Message Display Area -->
-    <p id="error-message" style="color:red;"></p>
-  </form>
+        <!-- Error Message Display Area -->
+        <p id="error-message" style="color:red;"></p>
+    </form>
 
-  <!-- Recommendations Section to Display Books -->
-  <section id="recommendations">
-    <h2>Recommended Books:</h2>
-    <ul id="book-list"></ul>
-  </section>
+    <!-- Create Profile Button (hidden at first) -->
+    <section id="profile-section">
+        <button id="create-profile-button" style="display: none;">Create Profile</button>
+    </section>
 
-  <!-- Link to external JavaScript file -->
-  <script src="app.js"></script>
+
+    <!-- Recommendations Section to Display Books -->
+    <section id="recommendations">
+        <h2>Recommended Books:</h2>
+        <ul id="book-list"></ul>
+    </section>
+
+    <!-- Create Profile Button (hidden at first) -->
+    <section id="profile-section">
+        <button id="create-profile-button" style="display: none;">Create Profile</button>
+    </section>
+
+
+    <!-- Link to external JavaScript file -->
+    <script src="app.js"></script>
 
 </body>
+
 </html>
