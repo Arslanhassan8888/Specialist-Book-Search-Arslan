@@ -1,221 +1,292 @@
-/* This sets the font and background colour for the whole page */
+/* 
+  Base styles for the entire webpage.
+  Sets the default font, background colour, and spacing around the content.
+*/
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f9fc;
-    padding: 20px;
-    margin: 0;
+    font-family: Arial, sans-serif; /* Sets the default font for the page */
+    background-color: #f4f9fc; /* Light blue background colour */
+    padding: 20px; /* Adds space inside the body element */
+    margin: 0; /* Removes default margin */
 }
 
-/* This changes the colour of all headings */
+/* 
+  Styles for heading elements (h1 and h2).
+  Sets a dark blue colour for consistency.
+*/
 h1, h2 {
-    color: #2c3e50;
+    color: #2c3e50; /* Dark blue colour for headings */
 }
 
-/* This centres the main title and adds space below it */
+/* 
+  Header section styles.
+  Centres the content and adds space below it.
+*/
 header {
-    text-align: center;
-    margin-bottom: 30px;
+    text-align: center; /* Centres the header content */
+    margin-bottom: 30px; /* Adds space below the header */
 }
 
-/* This styles the history section with a white background and rounded edges */
+/* 
+  History section styles.
+  Creates a white card with rounded corners and shadow effect.
+*/
 #history-section {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto 50px auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background-color: #ffffff; /* White background */
+    padding: 30px; /* Space inside the section */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 800px; /* Maximum width of the section */
+    margin: 0 auto 50px auto; /* Centres the section and adds space below */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    text-align: center; /* Centres the content */
 }
 
-/* This makes sure the image does not stretch too much and looks neat */
+/* 
+  Styles for the book store image in history section.
+  Controls size, rounded corners and spacing.
+*/
 #library-image {
-    max-width: 100%;
-    max-height: 400px;
-    height: auto;
-    border-radius: 10px;
-    margin: 15px 0;
-    object-fit: cover;
+    max-width: 100%; /* Ensures image doesn't overflow its container */
+    max-height: 400px; /* Maximum height for the image */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Rounded corners for the image */
+    margin: 15px 0; /* Space above and below the image */
+    object-fit: cover; /* Ensures image covers the space nicely */
 }
 
-/* This styles the history text to make it easier to read */
+/* 
+  History text paragraph styles.
+  Sets font size, colour and spacing for readability.
+*/
 #history-text {
-    font-size: 1.1em;
-    color: #333;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: justify;
+    font-size: 1.1em; /* Slightly larger text */
+    color: #333; /* Dark grey text colour */
+    line-height: 1.6; /* Space between lines for better reading */
+    max-width: 700px; /* Maximum width for optimal line length */
+    margin: 0 auto; /* Centres the paragraph */
+    text-align: justify; /* Aligns text to both left and right edges */
 }
 
-/* This puts the search and profile boxes side-by-side */
+/* 
+  Container for search and profile forms.
+  Arranges forms side by side with space between them.
+*/
 #search-profile-container {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 40px;
+    display: flex; /* Enables flexible box layout */
+    gap: 30px; /* Space between the two forms */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Centres the forms */
+    margin-bottom: 40px; /* Space below the container */
 }
 
-/* These boxes contain the search and profile forms */
+/* 
+  Styles for both search and profile form sections.
+  Creates white cards with subtle shadows.
+*/
 #book-search-section,
 #create-profile-section {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* White background */
+    padding: 20px; /* Space inside the sections */
+    border-radius: 8px; /* Slightly rounded corners */
+    max-width: 400px; /* Maximum width for each form */
+    width: 100%; /* Takes full width available */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* This sets labels to appear above each input field */
+/* 
+  Form label styles.
+  Makes labels bold and adds space above them.
+*/
 label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    display: block; /* Makes each label appear on its own line */
+    margin-top: 10px; /* Space above each label */
+    font-weight: bold; /* Makes label text bold */
 }
 
-/* This applies a basic style to all inputs, dropdowns, and buttons */
+/* 
+  Styles for form inputs, dropdowns and buttons.
+  Creates consistent look for all form elements.
+*/
 input,
 select,
 button {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 1em;
+    width: 100%; /* Full width of container */
+    padding: 8px; /* Space inside elements */
+    margin-top: 5px; /* Small space above elements */
+    border-radius: 4px; /* Slightly rounded corners */
+    border: 1px solid #ccc; /* Light grey border */
+    box-sizing: border-box; /* Includes padding in width calculation */
+    font-size: 1em; /* Standard text size */
 }
 
-/* This is for green buttons like 'Search Books' or 'Create Profile' */
+/* 
+  Green action buttons (search and create profile).
+  Styles for primary actions with hover effect.
+*/
 .green-btn {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    margin-top: 15px;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 4px;
-    width: 30%;
+    background-color: #28a745; /* Green colour */
+    color: white; /* White text */
+    border: none; /* Removes default border */
+    margin-top: 15px; /* Space above button */
+    cursor: pointer; /* Changes mouse to pointer */
+    font-size: 16px; /* Slightly larger text */
+    padding: 10px; /* Comfortable click area */
+    border-radius: 4px; /* Rounded corners */
+    width: 30%; /* Width relative to container */
 }
 
-/* This makes the green button darker when hovered */
+/* Hover effect for green buttons */
 .green-btn:hover {
-    background-color: #218838;
+    background-color: #218838; /* Darker green on hover */
 }
 
-/* This is for red buttons like 'Delete Profile' */
+/* 
+  Red delete buttons (reset form and delete profile).
+  Styles for destructive actions with hover effect.
+*/
 .delete-button {
-    background-color: #dc3545;
-    color: white;
-    margin-top: 10px;
-    border: none;
-    border-radius: 4px;
-    padding: 10px;
-    cursor: pointer;
-    width: 30%;
-    font-size: 16px;
+    background-color: #dc3545; /* Red colour */
+    color: white; /* White text */
+    margin-top: 10px; /* Space above button */
+    border: none; /* Removes default border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px; /* Comfortable click area */
+    cursor: pointer; /* Changes mouse to pointer */
+    font-size: 16px; /* Slightly larger text */
+    width: 30%; /* Width relative to container */
 }
 
-/* This changes the red button on hover */
+/* Hover effect for delete buttons */
 .delete-button:hover {
-    background-color: #c82333;
+    background-color: #c82333; /* Darker red on hover */
 }
 
-/* This styles the section where search results are shown */
+/* 
+  Recommended books section styles.
+  Creates a white card with centred content.
+*/
 #recommendations {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 0 auto 30px auto;
-    max-width: 700px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background-color: #ffffff; /* White background */
+    padding: 20px; /* Space inside section */
+    border-radius: 8px; /* Rounded corners */
+    margin: 0 auto 30px auto; /* Centres section and adds space below */
+    max-width: 700px; /* Maximum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Centres content */
 }
 
-/* Each book result item gets this style */
+/* 
+  Styles for individual book items in recommendations.
+  Adds spacing and borders between items.
+*/
 #book-list li {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px; /* Space below each book */
+    padding: 10px; /* Space around book info */
+    border-bottom: 1px solid #ccc; /* Light grey line between books */
+    text-align: left; /* Aligns text to the left */
 }
 
-/* This highlights the top-rated book */
+/* 
+  Special style for top pick books.
+  Adds green highlight to featured books.
+*/
 .top-pick {
-    background-color: #e8f5e9;
-    border-left: 4px solid #4caf50;
+    background-color: #e8f5e9; /* Very light green background */
+    border-left: 4px solid #4caf50; /* Green accent border on left */
 }
 
-/* These styles are for the buttons in the book list and wish list */
+/* 
+  Styles for wishlist action buttons.
+  Blue buttons for adding to wishlist and viewing it.
+*/
 #book-list button,
 #show-wishlist,
 #clear-wishlist {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    font-size: 0.9em;
-    margin-top: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: auto;
-    transition: background-color 0.3s ease;
+    background-color: #3498db; /* Blue colour */
+    color: white; /* White text */
+    border: none; /* Removes default border */
+    padding: 6px 10px; /* Comfortable click area */
+    font-size: 0.9em; /* Slightly smaller text */
+    margin-top: 10px; /* Space above button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Changes mouse to pointer */
+    width: auto; /* Width based on content */
+    transition: background-color 0.3s ease; /* Smooth colour change */
 }
 
-/* This is for the red 'Clear Wish List' button */
+/* 
+  Clear wishlist button gets red colour.
+  Different colour for destructive action.
+*/
 #clear-wishlist {
-    background-color: #eb0716;
+    background-color: #eb0716; /* Red colour */
 }
 
-/* Changes colour slightly when you hover over these buttons */
+/* Hover effect for wishlist buttons */
 #book-list button:hover,
-#show-wishlist:hover {
-    background-color: #217dbb;
+#show-wishlist:hover,
+#clear-wishlist:hover {
+    background-color: #217dbb; /* Darker blue on hover */
 }
 
-/* This is the main box showing the wish list section */
+/* 
+  Wishlist section styles.
+  Creates a white card for displaying saved books.
+*/
 #my-wishlist-section {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background-color: #ffffff; /* White background */
+    padding: 20px; /* Space inside section */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 700px; /* Maximum width */
+    margin: 0 auto 40px auto; /* Centres section and adds space below */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Centres content */
 }
 
-/* This centres the wish list heading */
+/* 
+  Styles for wishlist heading.
+  Adds space below the heading.
+*/
 #my-wishlist-section h2 {
-    text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Space below heading */
 }
 
-/* Each item in the wish list has a bottom border and some padding */
+/* 
+  Styles for individual wishlist items.
+  Adds spacing and borders between items.
+*/
 #my-wishlist li {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
+    padding: 8px; /* Space around each item */
+    border-bottom: 1px solid #ddd; /* Light grey line between items */
+    text-align: left; /* Aligns text to the left */
 }
 
-/* This shows a red warning message if the user is not logged in */
+/* 
+  Warning message style for wishlist actions.
+  Red text for important warnings.
+*/
 #wishlist-warning {
-    color: red;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
+    color: red; /* Red text colour */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Centred text */
+    margin-bottom: 10px; /* Space below warning */
 }
 
-/* This makes the layout adjust on smaller screens like phones */
+/* 
+  Responsive design adjustments for smaller screens.
+  Changes layout when screen width is below 900px.
+*/
 @media (max-width: 900px) {
     #search-profile-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Stacks forms vertically */
+        align-items: center; /* Centres the stacked forms */
     }
 }
 
-/* Removes default list bullet points */
+/* 
+  Removes default bullet points from all lists.
+  Also removes default left padding.
+*/
 ul {
-    list-style-type: none;
-    padding-left: 0;
+    list-style-type: none; /* No bullet points */
+    padding-left: 0; /* No left padding */
 }
