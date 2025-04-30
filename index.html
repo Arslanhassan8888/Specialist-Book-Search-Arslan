@@ -4,125 +4,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arslan's Library</title>
-  <!-- Link to external CSS file -->
+  <title>Arslan's Book Store</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- Main Header Section -->
+  <!-- Main Header -->
   <header>
-    <h1 id="main-title">WELCOME TO ARSLAN'S LIBRARY</h1>
+    <h1 id="main-title">WELCOME TO ARSLAN'S BOOK STORE</h1>
   </header>
 
-  <!-- History Section with Image and Text -->
+  <!-- History Section -->
   <section id="history-section">
     <h2>OUR HISTORY</h2>
-    <img src="Library_pic.jpg" alt="Library Image" id="library-image" />
+    <img src="book_Store.jpg" alt="Inside view of Arslan's Book Store" id="library-image" />
     <p id="history-text">
-      Established in 1952, Arslan’s Library has grown from a small community space into a treasure trove of literature.
-      With a passion for storytelling and knowledge, our library preserves the spirit of discovery, imagination, and learning for generations to come.
-      We have expanded to include rare manuscripts, bestsellers, and digital archives for every reader.
+      Arslan’s Book Store first opened its doors in 1952 as a small local shop for people who simply loved books.
+      Over the years, it’s become a warm and welcoming place for readers of all ages.
+      From bestselling novels to hidden gems, there’s something on the shelves for everyone.
+      We believe in the joy of reading, the value of stories, and the power of a good book to bring people together.
+      Whether you're popping in for a quick browse or staying a while, you're always welcome at Arslan’s.
     </p>
   </section>
 
-  <!-- Container for Search Form and Profile Form side by side -->
-  <div class="form-container">
+  <!-- Search and Profile Side-by-Side -->
+  <div id="search-profile-container">
 
-    <!-- Book Search Form Section -->
-    <form id="book-form">
-      <h2 id="form-title">Find Your Perfect Book</h2>
+    <!-- Book Search Form -->
+    <section id="book-search-section">
+      <h2>FIND YOUR PERFECT BOOK</h2>
+      <form id="book-form" novalidate>
+        <label for="genre">Genre:</label>
+        <select id="genre">
+          <option value="">--Select Genre--</option>
+          <option value="fiction">Fiction</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="mystery">Mystery</option>
+          <option value="historical">Historical</option>
+        </select>
 
-      <!-- Genre Dropdown -->
-      <label for="genre">Genre:</label>
-      <select id="genre">
-        <option value="">--Select Genre--</option>
-        <option value="fiction">Fiction</option>
-        <option value="non-fiction">Non-Fiction</option>
-        <option value="fantasy">Fantasy</option>
-        <option value="mystery">Mystery</option>
-        <option value="historical">Historical</option>
-      </select>
+        <label for="author">Author:</label>
+        <input type="text" id="author" placeholder="e.g. Clara Moore" />
 
-      <!-- Author Input -->
-      <label for="author">Author:</label>
-      <input type="text" id="author" placeholder="e.g. Clara Moore" />
+        <label for="min-price">Minimum Price (£):</label>
+        <input type="text" id="min-price" placeholder="e.g. 10.00" />
 
-      <!-- Minimum Price Input -->
-      <label for="min-price">Minimum Price (£):</label>
-      <input type="text" id="min-price" placeholder="e.g. 10.00" />
+        <label for="max-price">Maximum Price (£):</label>
+        <input type="text" id="max-price" placeholder="e.g. 25.00" />
 
-      <!-- Maximum Price Input -->
-      <label for="max-price">Maximum Price (£):</label>
-      <input type="text" id="max-price" placeholder="e.g. 25.00" />
+        <label for="language">Language:</label>
+        <select id="language">
+          <option value="">--Select Language--</option>
+          <option value="English">English</option>
+          <option value="French">French</option>
+          <option value="Arabic">Arabic</option>
+        </select>
 
-      <!-- Language Dropdown -->
-      <label for="language">Language:</label>
-      <select id="language">
-        <option value="">--Select Language--</option>
-        <option value="English">English</option>
-        <option value="French">French</option>
-        <option value="Arabic">Arabic</option>
-      </select>
+        <label for="format">Format:</label>
+        <select id="format">
+          <option value="">--Select Format--</option>
+          <option value="ebook">Ebook</option>
+          <option value="paperback">Paperback</option>
+          <option value="hardcover">Hardcover</option>
+        </select>
 
-      <!-- Format Dropdown -->
-      <label for="format">Format:</label>
-      <select id="format">
-        <option value="">--Select Format--</option>
-        <option value="ebook">Ebook</option>
-        <option value="paperback">Paperback</option>
-        <option value="hardcover">Hardcover</option>
-      </select>
+        <button type="submit" id="search-button">Search Books</button>
+        <button type="button" id="reset-button">Reset Form</button>
 
-      <!-- Buttons -->
-      <button type="submit" id="search-button">Search Books</button>
-      <button type="button" id="reset-button">Reset Form</button>
+        <p id="error-message" style="color: red;"></p>
+      </form>
+    </section>
 
-      <!-- Error message display -->
-      <p id="error-message" style="color:red;"></p>
-    </form>
+    <!-- Create Profile Form -->
+    <section id="create-profile-section">
+      <h2>CREATE PROFILE</h2>
+      <form id="profile-form" novalidate>
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" placeholder="e.g. Arslan" required />
 
-    <!-- Profile Form (initially hidden, appears when triggered) -->
-    <div id="profile-form" style="display:none;">
-      <h2>Create Your Profile</h2>
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" placeholder="e.g. Khan" required />
 
-      <label for="first-name">First Name:</label>
-      <input type="text" id="first-name" placeholder="First Name" />
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="e.g. arslan@example.com" required />
 
-      <label for="last-name">Last Name:</label>
-      <input type="text" id="last-name" placeholder="Last Name" />
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required />
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="Email" />
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" placeholder="e.g. +44 1234 567890" required />
 
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob" />
-
-      <label for="contact">Contact Number:</label>
-      <input type="text" id="contact" placeholder="Contact No" />
-
-      <button type="button" id="save-profile">Save Profile</button>
-    </div>
+        <button type="submit" class="green-btn">Create Profile</button>
+      </form>
+    </section>
 
   </div>
 
-  <!-- Section to show if user tries to wish list without profile -->
+  <!-- Recommended Books Section -->
   <section id="recommendations">
-    <!-- Message appears if no profile yet -->
-    <p id="profile-warning" style="color: darkred; display: none; font-weight: bold;">
-      You must create a profile first to save books to your wish list.
+    <p id="wishlist-warning" style="color: red; font-weight: bold; text-align: center; display: none;">
+      You must create an account to add books to your wish list.
     </p>
-
-    <!-- Button to trigger profile form -->
-    <button id="create-profile-button" style="display: none;">Create Profile</button>
-
-    <!-- Book Results List -->
     <h2>Recommended Books:</h2>
     <ul id="book-list"></ul>
   </section>
 
-  <!-- JavaScript Link -->
+  <!-- Wish List Viewer -->
+  <section id="my-wishlist-section">
+    <h2>My Wish List</h2>
+    <button id="show-wishlist">View My Wish List</button>
+    <ul id="my-wishlist"></ul>
+  </section>
+
+  <!-- Script -->
   <script src="app.js"></script>
 </body>
 

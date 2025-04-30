@@ -1,208 +1,180 @@
-/*
-  Basic Page Setup
-  ----------------
-  Set font style, background colour, and padding for the whole page.
-*/
+/* Base Layout */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f9fc;
     padding: 20px;
-}
-
-/*
-  Headings Style
-  --------------
-  Colour styling for all h1 and h2 headings.
-*/
-h1, h2 {
+    margin: 0;
+  }
+  
+  h1, h2 {
     color: #2c3e50;
-}
-
-/*
-  Layout for Search and Profile Forms
-  -----------------------------------
-  Forms appear side by side.
-*/
-.form-container {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-/*
-  Form Styling
-  ------------
-  Style for both search and profile form containers.
-*/
-form, #profile-form {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-/* Label Styling */
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/*
-  Inputs, Selects, and Buttons Styling
-  ------------------------------------
-  Common styling for input fields, select dropdowns, and buttons.
-*/
-input, select, button {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-/*
-  Search Button Styling
-  ---------------------
-  Blue button for searching with hover effect.
-*/
-#search-button {
-    background-color: #3498db;
-    color: white;
-    margin-top: 15px;
-    border: none;
-    cursor: pointer;
-}
-
-#search-button:hover {
-    background-color: #2980b9;
-}
-
-/*
-  Reset Button Styling
-  --------------------
-  Light red button to reset the form with hover effect.
-*/
-#reset-button {
-    background-color: #f8d7da;
-    color: #721c24;
-    margin-top: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-#reset-button:hover {
-    background-color: #f5c6cb;
-}
-
-/*
-  Save Profile Button Styling
-  ---------------------------
-  Green button to save the profile.
-*/
-#save-profile {
-    background-color: #28a745;
-    color: white;
-    margin-top: 15px;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#save-profile:hover {
-    background-color: #218838;
-}
-
-/*
-  Recommendations Section Styling
-  --------------------------------
-  Style for the box displaying recommended books.
-*/
-#recommendations {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
-}
-
-/*
-  Book List Item Styling
-  ----------------------
-  Each recommended book style inside the list.
-*/
-#book-list li {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-/*
-  Highlighting Top-Rated Book
-  ---------------------------
-  Special background and border for the best matched book.
-*/
-.top-pick {
-    background-color: #e8f5e9;
-    border-left: 4px solid #4caf50;
-}
-
-/*
-  History Section Styling
-  -----------------------
-  Styling for the history block under the welcome title.
-*/
-#history-section {
+  }
+  
+  /* Header */
+  header {
     text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* History Section */
+  #history-section {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
     max-width: 800px;
     margin: 0 auto 50px auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Library Image Styling */
-#library-image {
+    text-align: center;
+  }
+  
+  #library-image {
     max-width: 100%;
     max-height: 400px;
     height: auto;
     border-radius: 10px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: 15px 0;
     object-fit: cover;
-}
-
-/* History Text Styling */
-#history-text {
+  }
+  
+  #history-text {
     font-size: 1.1em;
     color: #333;
     line-height: 1.6;
-    margin: 0 auto;
-    padding: 0 10px;
     max-width: 700px;
+    margin: 0 auto;
     text-align: justify;
-}
-
-/* Create Profile Button Styling */
-#create-profile-button {
-    background-color: #28a745; /* Green background */
+  }
+  
+  /* Side-by-side Search and Profile Containers */
+  #search-profile-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  #book-search-section,
+  #create-profile-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Labels and Inputs */
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  input,
+  select,
+  button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Search Button */
+  #search-button {
+    background-color: #3498db;
     color: white;
-    padding: 10px 20px;
+    margin-top: 15px;
     border: none;
-    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #search-button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Reset Button */
+  #reset-button {
+    background-color: #f8d7da;
+    color: #721c24;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #reset-button:hover {
+    background-color: #f5c6cb;
+  }
+  
+  /* Create Profile Button */
+  .green-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    margin-top: 15px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 15px;
-    display: none; /* Hidden at first */
-}
-
-#create-profile-button:hover {
-    background-color: #218838; /* Darker green on hover */
-}
+    padding: 10px 20px;
+    border-radius: 6px;
+  }
+  
+  .green-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Recommended Books */
+  #recommendations {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #book-list li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .top-pick {
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+  }
+  
+  /* Wish List Warning */
+  #wishlist-warning {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* My Wish List Section */
+  #my-wishlist-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #my-wishlist-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  #my-wishlist li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 900px) {
+    #search-profile-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
