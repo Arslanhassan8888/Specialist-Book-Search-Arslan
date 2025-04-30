@@ -223,6 +223,7 @@ showWishlistBtn.addEventListener("click", () => {
 profileForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
+  
   // Grab form inputs
   const firstNameInput = document.getElementById("first-name");
   const lastNameInput = document.getElementById("last-name");
@@ -259,6 +260,16 @@ profileForm.addEventListener("submit", function (e) {
   alert("Profile created successfully!");
   profileForm.reset();
   wishlistWarning.style.display = "none";
+});
+
+// Delete Profile and Wish List
+document.getElementById("delete-profile").addEventListener("click", () => {
+  if (confirm("Are you sure you want to delete your profile and wish list?")) {
+    localStorage.removeItem("userProfile");
+    localStorage.removeItem("wishList");
+    alert("Your profile and wish list have been deleted.");
+    location.reload(); // Refresh page to update UI
+  }
 });
 
 
