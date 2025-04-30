@@ -19,17 +19,30 @@ h1, h2 {
 }
 
 /*
+  Layout for Search and Profile Forms
+  -----------------------------------
+  Forms appear side by side.
+*/
+.form-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/*
   Form Styling
   ------------
-  Style for the search form including background, padding, and box shadow.
+  Style for both search and profile form containers.
 */
-form {
+form, #profile-form {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     max-width: 400px;
-    margin-bottom: 20px;
+    width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 /* Label Styling */
@@ -88,6 +101,25 @@ input, select, button {
 }
 
 /*
+  Save Profile Button Styling
+  ---------------------------
+  Green button to save the profile.
+*/
+#save-profile {
+    background-color: #28a745;
+    color: white;
+    margin-top: 15px;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#save-profile:hover {
+    background-color: #218838;
+}
+
+/*
   Recommendations Section Styling
   --------------------------------
   Style for the box displaying recommended books.
@@ -97,6 +129,7 @@ input, select, button {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
 }
 
 /*
@@ -168,9 +201,8 @@ input, select, button {
     font-size: 16px;
     margin-top: 15px;
     display: none; /* Hidden at first */
-  }
-  
-  #create-profile-button:hover {
+}
+
+#create-profile-button:hover {
     background-color: #218838; /* Darker green on hover */
-  }
-  
+}

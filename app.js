@@ -35,12 +35,25 @@ const books = [
   { title: "Garden Secrets", author: "Emily Rowe", genre: "fiction", price: 15.50, language: "English", format: "ebook", description: "New life blooms in hidden gardens. Dive deeper into an unforgettable story filled with emotion, intrigue, and unexpected turns.", rating: 4.2 }
 ];
 
+/*
+  Book Search and Recommendation Application
+  -------------------------------------------
+  This script allows users to search for books based on genre, author,
+  price range, language, and format. It highlights the top-rated book
+  among the filtered results. Users can also reset the form easily and
+  create profiles to store wish list books.
+*/
+
 // Get elements from the page
 const form = document.getElementById("book-form"); // Form element
 const genreSelect = document.getElementById("genre"); // Genre dropdown
 const bookList = document.getElementById("book-list"); // List to display books
 const errorMessage = document.getElementById("error-message"); // Error message block
 const resetButton = document.getElementById("reset-button"); // Reset button
+const profileWarning = document.getElementById("profile-warning"); // Warning message when profile not created
+const profileBtn = document.getElementById("create-profile-button"); // Create profile button
+const profileForm = document.getElementById("profile-form"); // Profile form section
+const saveProfileBtn = document.getElementById("save-profile"); // Save profile button
 
 /*
   Event listener for form submission
@@ -127,12 +140,12 @@ form.addEventListener("submit", function (e) {
       li.appendChild(document.createElement("br")); // Line break
       li.appendChild(details);     // Insert book details
       li.appendChild(description); // Insert book description
-      
+
       const addButton = document.createElement("button");
       addButton.textContent = "Add to Wish List";
       addButton.addEventListener("click", () => addToWishList(book));
       li.appendChild(addButton);
-    
+
       bookList.appendChild(li); // Finally append the whole <li> into the book list (ul)
     });
   }
@@ -165,13 +178,11 @@ function addToWishList(book) {
 
   if (!userProfile) {
     // Show warning message on screen
-    const warning = document.getElementById("profile-warning");
-    if (warning) {
-      warning.style.display = "block";
+    if (profileWarning) {
+      profileWarning.style.display = "block";
     }
 
     // Show the Create Profile button
-    const profileBtn = document.getElementById("create-profile-button");
     if (profileBtn) {
       profileBtn.style.display = "inline-block";
     }
@@ -181,4 +192,35 @@ function addToWishList(book) {
 
   // Proceed later to save the book to the wish list
   console.log("Profile exists — book can be saved.");
+}
+
+// Show the profile form when Create Profile button is clicked
+if (profileBtn && profileForm) {
+  profileBtn.addEventListener("click", function () {
+    profileForm.style.display = "block"; // Show the form
+    profileBtn.style.display = "none";   // Hide the button to avoid repeat click
+    if (profileWarning) profileWarning.style.display = "none"; // Also hide warning message
+  });
+}
+
+// Save profile data to localStorage
+if (saveProfileBtn) {
+  saveProfileBtn.addEventListener("click", function () {
+    const profileData = {
+      firstName: document.getElementById("first-name").value.trim(),
+      lastName: document.getElementById("last-name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      dob: document.getElementById("dob").value.trim(),
+      contact: document.getElementById("contact").value.trim(),
+    };
+
+    if (!profileData.firstName || !profileData.lastName || !profileData.email) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    localStorage.setItem("userProfile", JSON.stringify(profileData));
+    alert("Profile saved successfully!");
+    profileForm.style.display = "none";
+  });
 }
