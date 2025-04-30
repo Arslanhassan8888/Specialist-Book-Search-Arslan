@@ -2,126 +2,159 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arslan's Book Store</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arslan's Book Store</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- Main Header -->
-  <header>
-    <h1 id="main-title">WELCOME TO ARSLAN'S BOOK STORE</h1>
-  </header>
+    <!-- This is the main title at the top of the page -->
+    <header>
+        <h1 id="main-title">WELCOME TO ARSLAN'S BOOK STORE</h1>
+    </header>
 
-  <!-- History Section -->
-  <section id="history-section">
-    <h2>OUR HISTORY</h2>
-    <img src="book_Store.jpg" alt="Inside view of Arslan's Book Store" id="library-image" />
-    <p id="history-text">
-      Arslan’s Book Store first opened its doors in 1952 as a small local shop for people who simply loved books.
-      Over the years, it’s become a warm and welcoming place for readers of all ages.
-      From bestselling novels to hidden gems, there’s something on the shelves for everyone.
-      We believe in the joy of reading, the value of stories, and the power of a good book to bring people together.
-      Whether you're popping in for a quick browse or staying a while, you're always welcome at Arslan’s.
-    </p>
-  </section>
-
-  <!-- Search and Profile Side-by-Side -->
-  <div id="search-profile-container">
-
-    <!-- Book Search Form -->
-    <section id="book-search-section">
-      <h2>FIND YOUR PERFECT BOOK</h2>
-      <form id="book-form" novalidate>
-        <label for="genre">Genre:</label>
-        <select id="genre">
-          <option value="">--Select Genre--</option>
-          <option value="fiction">Fiction</option>
-          <option value="fantasy">Fantasy</option>
-          <option value="mystery">Mystery</option>
-          <option value="historical">Historical</option>
-        </select>
-
-        <label for="author">Author:</label>
-        <input type="text" id="author" placeholder="e.g. Clara Moore" />
-
-        <label for="min-price">Minimum Price (£):</label>
-        <input type="text" id="min-price" placeholder="e.g. 10.00" />
-
-        <label for="max-price">Maximum Price (£):</label>
-        <input type="text" id="max-price" placeholder="e.g. 25.00" />
-
-        <label for="language">Language:</label>
-        <select id="language">
-          <option value="">--Select Language--</option>
-          <option value="English">English</option>
-          <option value="French">French</option>
-          <option value="Arabic">Arabic</option>
-        </select>
-
-        <label for="format">Format:</label>
-        <select id="format">
-          <option value="">--Select Format--</option>
-          <option value="ebook">Ebook</option>
-          <option value="paperback">Paperback</option>
-          <option value="hardcover">Hardcover</option>
-        </select>
-
-        <button type="submit" id="search-button">Search Books</button>
-        <button type="button" id="reset-button">Reset Form</button>
-
-        <p id="error-message" style="color: red;"></p>
-      </form>
+    <!-- This section talks about the background of the book store -->
+    <section id="history-section">
+        <h2>OUR HISTORY</h2>
+        <!-- This is an image of the book store interior -->
+        <img src="book_store.jpg" alt="Inside view of Arslan's Book Store" id="library-image" />
+        <!-- This paragraph gives the story of how the store started and its purpose -->
+        <p id="history-text">
+            Arslan’s Book Store first opened its doors in 1952 as a small local shop for people who simply loved books.
+            Over the years, it’s become a warm and welcoming place for readers of all ages.
+            From bestselling novels to hidden gems, there’s something on the shelves for everyone.
+            We believe in the joy of reading, the value of stories, and the power of a good book to bring people together.
+            Whether you're popping in for a quick browse or staying a while, you're always welcome at Arslan’s.
+        </p>
     </section>
 
-    <!-- Create Profile Form -->
-    <section id="create-profile-section">
-      <h2>CREATE PROFILE</h2>
-      <form id="profile-form" novalidate>
-        <label for="first-name">First Name:</label>
-        <input type="text" id="first-name" placeholder="e.g. Arslan" required />
+    <!-- This is the container that holds the search and profile forms next to each other -->
+    <div id="search-profile-container">
 
-        <label for="last-name">Last Name:</label>
-        <input type="text" id="last-name" placeholder="e.g. Khan" required />
+        <!-- This section is where users can search for books -->
+        <section id="book-search-section">
+            <h2>FIND YOUR PERFECT BOOK</h2>
+            <form id="book-form" novalidate>
+                <!-- Choose a book genre from the dropdown -->
+                <label for="genre">Genre:</label>
+                <select id="genre">
+                    <option value="">--Select Genre--</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="historical">Historical</option>
+                </select>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="e.g. arslan@example.com" required />
+                <!-- Type the author’s name -->
+                <label for="author">Author:</label>
+                <input type="text" id="author" placeholder="e.g. Clara Moore" />
 
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" required />
+                <!-- Set a minimum price -->
+                <label for="min-price">Minimum Price (£):</label>
+                <input type="text" id="min-price" placeholder="e.g. 10.00" />
 
-        <label for="contact">Contact Number:</label>
-        <input type="tel" id="contact" placeholder="e.g. +44 1234 567890" required />
+                <!-- Set a maximum price -->
+                <label for="max-price">Maximum Price (£):</label>
+                <input type="text" id="max-price" placeholder="e.g. 25.00" />
 
-        <button type="submit" class="green-btn">Create Profile</button>
-        <button type="button" id="delete-profile" class="delete-button">Delete Profile</button>
+                <!-- Choose the language of the book -->
+                <label for="language">Language:</label>
+                <select id="language">
+                    <option value="">--Select Language--</option>
+                    <option value="English">English</option>
+                    <option value="French">French</option>
+                    <option value="Arabic">Arabic</option>
+                </select>
 
-        
-      </form>
+                <!-- Choose the format of the book -->
+                <label for="format">Format:</label>
+                <select id="format">
+                    <option value="">--Select Format--</option>
+                    <option value="ebook">Ebook</option>
+                    <option value="paperback">Paperback</option>
+                    <option value="hardcover">Hardcover</option>
+                </select>
+
+                <!-- Button to search for books -->
+                <button type="submit" id="search-button" class="green-btn">Search Books</button>
+                <!-- Button to clear the form -->
+                <button type="button" id="reset-button" class="delete-button">Reset Form</button>
+
+                <!-- This paragraph shows error messages -->
+                <p id="error-message" style="color: red;"></p>
+            </form>
+        </section>
+
+        <!-- This section is for creating a new user profile -->
+        <section id="create-profile-section">
+            <h2>CREATE PROFILE</h2>
+            <form id="profile-form" novalidate>
+                <!-- Enter first name -->
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" placeholder="e.g. Arslan" required />
+
+                <!-- Enter last name -->
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" placeholder="e.g. Khan" required />
+
+                <!-- Enter email address -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="e.g. arslan@example.com" required />
+
+                <!-- Select date of birth -->
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required />
+
+                <!-- Enter contact number -->
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" placeholder="e.g. +44 1234 567890" required />
+
+                <!-- Enter current job or role -->
+                <label for="occupation">Occupation:</label>
+                <input type="text" id="occupation" placeholder="e.g. University Student" required />
+
+                <!-- Button to create a profile -->
+                <button type="submit" class="green-btn">Create Profile</button>
+                <!-- Button to delete the current profile -->
+                <button type="button" id="delete-profile" class="delete-button">Delete Profile</button>
+            </form>
+        </section>
+
+    </div>
+
+    <!-- This section shows books recommended after search -->
+    <section id="recommendations">
+        <!-- Warning shown when a user tries to add to wishlist without having a profile -->
+        <p id="wishlist-warning" style="color: red; font-weight: bold; text-align: center; display: none;">
+            You must create an account to add books to your wish list.
+        </p>
+        <h2>Recommended Books:</h2>
+        <!-- Book results will be listed here -->
+        <ul id="book-list"></ul>
     </section>
 
-  </div>
+    <!-- This section lets the user view and clear their wish list -->
+    <section id="my-wishlist-section">
+        <h2>My Wish List</h2>
+        <!-- Button to load the wish list -->
+        <button id="show-wishlist">View My Wish List</button>
+        <!-- Wish list items will appear here -->
+        <ul id="my-wishlist"></ul>
+        <!-- Button to clear all items from wish list -->
+        <button id="clear-wishlist" class="delete-button-wishlist">Clear My Wish List</button>
+    </section>
 
-  <!-- Recommended Books Section -->
-  <section id="recommendations">
-    <p id="wishlist-warning" style="color: red; font-weight: bold; text-align: center; display: none;">
-      You must create an account to add books to your wish list.
-    </p>
-    <h2>Recommended Books:</h2>
-    <ul id="book-list"></ul>
-  </section>
+    <!-- This is a navigation button to go to the wish list page -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="wish_list.html">
+            <button class="green-btn">GO WISH LIST</button>
+        </a>
+    </div>
 
-  <!-- Wish List Viewer -->
-  <section id="my-wishlist-section">
-    <h2>My Wish List</h2>
-    <button id="show-wishlist">View My Wish List</button>
-    <ul id="my-wishlist"></ul>
-  </section>
-
-  <!-- Script -->
-  <script src="app.js"></script>
+    <!-- This is the link to the JavaScript file for interactive behaviour -->
+    <script src="app.js"></script>
 </body>
 
 </html>

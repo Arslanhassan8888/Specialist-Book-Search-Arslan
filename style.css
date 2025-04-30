@@ -1,23 +1,24 @@
-/* Base Layout */
+/* This sets the font and background colour for the whole page */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f9fc;
     padding: 20px;
     margin: 0;
-  }
-  
-  h1, h2 {
+}
+
+/* This changes the colour of all headings */
+h1, h2 {
     color: #2c3e50;
-  }
-  
-  /* Header */
-  header {
+}
+
+/* This centres the main title and adds space below it */
+header {
     text-align: center;
     margin-bottom: 30px;
-  }
-  
-  /* History Section */
-  #history-section {
+}
+
+/* This styles the history section with a white background and rounded edges */
+#history-section {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
@@ -25,161 +26,87 @@ body {
     margin: 0 auto 50px auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
-  
-  #library-image {
+}
+
+/* This makes sure the image does not stretch too much and looks neat */
+#library-image {
     max-width: 100%;
     max-height: 400px;
     height: auto;
     border-radius: 10px;
     margin: 15px 0;
     object-fit: cover;
-  }
-  
-  #history-text {
+}
+
+/* This styles the history text to make it easier to read */
+#history-text {
     font-size: 1.1em;
     color: #333;
     line-height: 1.6;
     max-width: 700px;
     margin: 0 auto;
     text-align: justify;
-  }
-  
-  /* Side-by-side Search and Profile Containers */
-  #search-profile-container {
+}
+
+/* This puts the search and profile boxes side-by-side */
+#search-profile-container {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 40px;
-  }
-  
-  #book-search-section,
-  #create-profile-section {
+}
+
+/* These boxes contain the search and profile forms */
+#book-search-section,
+#create-profile-section {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     max-width: 400px;
     width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Labels and Inputs */
-  label {
+}
+
+/* This sets labels to appear above each input field */
+label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
-  }
-  
-  input,
-  select,
-  button {
+}
+
+/* This applies a basic style to all inputs, dropdowns, and buttons */
+input,
+select,
+button {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border-radius: 4px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-  }
-  
-  /* Search Button */
-  #search-button {
-    background-color: #3498db;
-    color: white;
-    margin-top: 15px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #search-button:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Reset Button */
-  #reset-button {
-    background-color: #f8d7da;
-    color: #721c24;
-    margin-top: 10px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #reset-button:hover {
-    background-color: #f5c6cb;
-  }
-  
-  /* Create Profile Button */
-  .green-btn {
+    font-size: 1em;
+}
+
+/* This is for green buttons like 'Search Books' or 'Create Profile' */
+.green-btn {
     background-color: #28a745;
     color: white;
     border: none;
     margin-top: 15px;
     cursor: pointer;
     font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 6px;
-  }
-  
-  .green-btn:hover {
-    background-color: #218838;
-  }
-  
-  /* Recommended Books */
-  #recommendations {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  #book-list li {
-    margin-bottom: 15px;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .top-pick {
-    background-color: #e8f5e9;
-    border-left: 4px solid #4caf50;
-  }
-  
-  /* Wish List Warning */
-  #wishlist-warning {
-    color: red;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  /* My Wish List Section */
-  #my-wishlist-section {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  #my-wishlist-section h2 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  #my-wishlist li {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 900px) {
-    #search-profile-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  
-  /* Clear Input Button Styling */
-/* Delete Profile Button Styling */
+    border-radius: 4px;
+    width: 30%;
+}
+
+/* This makes the green button darker when hovered */
+.green-btn:hover {
+    background-color: #218838;
+}
+
+/* This is for red buttons like 'Delete Profile' */
 .delete-button {
     background-color: #dc3545;
     color: white;
@@ -188,11 +115,107 @@ body {
     border-radius: 4px;
     padding: 10px;
     cursor: pointer;
-    width: 100%;
-  }
-  
-  .delete-button:hover {
+    width: 30%;
+    font-size: 16px;
+}
+
+/* This changes the red button on hover */
+.delete-button:hover {
     background-color: #c82333;
-  }
-  
-  
+}
+
+/* This styles the section where search results are shown */
+#recommendations {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 auto 30px auto;
+    max-width: 700px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Each book result item gets this style */
+#book-list li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* This highlights the top-rated book */
+.top-pick {
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+}
+
+/* These styles are for the buttons in the book list and wish list */
+#book-list button,
+#show-wishlist,
+#clear-wishlist {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    font-size: 0.9em;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    transition: background-color 0.3s ease;
+}
+
+/* This is for the red 'Clear Wish List' button */
+#clear-wishlist {
+    background-color: #eb0716;
+}
+
+/* Changes colour slightly when you hover over these buttons */
+#book-list button:hover,
+#show-wishlist:hover {
+    background-color: #217dbb;
+}
+
+/* This is the main box showing the wish list section */
+#my-wishlist-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* This centres the wish list heading */
+#my-wishlist-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Each item in the wish list has a bottom border and some padding */
+#my-wishlist li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* This shows a red warning message if the user is not logged in */
+#wishlist-warning {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* This makes the layout adjust on smaller screens like phones */
+@media (max-width: 900px) {
+    #search-profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Removes default list bullet points */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
