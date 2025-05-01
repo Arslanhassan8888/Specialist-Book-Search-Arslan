@@ -10,7 +10,6 @@
 // Book data containing title, author, genre, price, language, format, description and rating 
 const books = [
     { title: "Shadow in the Attic", author: "Lena Blackwood", genre: "mystery", price: 15.00, language: "English", format: "paperback", description: "A chilling mystery unfolds in an abandoned house. Dive deeper into an unforgettable story filled with emotion, intrigue, and unexpected turns.", rating: 4.4 },
-    { title: "Whispers Beyond", author: "Elena Vance", genre: "mystery", price: 22.50, language: "Arabic", format: "hardcover", description: "Ancient secrets hidden under moonlight. Dive deeper into an unforgettable story filled with emotion, intrigue, and unexpected turns.", rating: 4.2 },
     { title: "Diamond Heist", author: "Olivia Frost", genre: "mystery", price: 98.50, language: "English", format: "hardcover", description: "A detective's greatest challenge yet.", rating: 4.8 },
     { title: "Storm of Feathers", author: "Nia Greyhawk", genre: "fantasy", price: 21.00, language: "English", format: "hardcover", description: "Winged warriors fight for freedom in a sky-born empire.", rating: 3.9 },
     { title: "Colors of Silence", author: "Samir Hafez", genre: "fiction", price: 28.00, language: "Arabic", format: "hardcover", description: "Stories stitched through generations.", rating: 4.2 },
