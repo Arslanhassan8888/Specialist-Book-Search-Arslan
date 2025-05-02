@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arslan's Book Store</title>
   <!-- This line adds a favicon (a small icon in the browser tab) -->
-  <link rel="icon" type="favicon" href="book.jpg">
+  <link rel="icon" type="favicon" href="book_logo.jpg">
   <!-- This links to the external CSS file that handles the styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -54,7 +54,10 @@
     <section id="book-search-section">
       <h2>FIND YOUR PERFECT BOOK</h2>
 
-      <!-- 'novalidate' disables default browser validation -->
+      <!-- 'novalidate' disables default browser validation, this mena i want valida
+       through javascript, and not the built in validation in the browser, for example without NOVALIDATE the browse
+       doen't allow to submit the form without valid email, becauise of the browser built rules. in this way i decide the rule 
+       of validation through javascript -->
       <form id="book-form" novalidate>
 
         <!-- Dropdown for selecting a book genre -->
