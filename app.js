@@ -215,6 +215,7 @@ function addToWishList(book) { // This function adds a book to the user's wish l
     }
 }
 
+
 // Updates the wish list display. This function refreshes the wish list display to show the current items in the user's wish list.
 function updateWishlistDisplay() {
     wishlistOutput.innerHTML = "";// Clear the current wish list display
