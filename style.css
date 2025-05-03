@@ -4,13 +4,9 @@
 */
 body {
     font-family: Arial, sans-serif;
-    /* Sets the font for the whole page */
     background-color: #f0f8ff;
-    /* Light blue background for a calm look */
     padding: 20px;
-    /* Adds space inside the body around content */
     margin: 0;
-    /* Removes default space around the edges */
   }
   
   /* 
@@ -30,7 +26,7 @@ body {
     HEADER STYLES
   */
   header {
-    text-align: center;
+    text-align: center;    /* Centers the header content */
     margin-bottom: 30px;
     background-color: #e6f2ff;
     padding: 20px;
@@ -74,7 +70,7 @@ body {
     /* Increases space between lines */
     max-width: 700px;
     margin: 0 auto;
-    text-align: justify;
+    text-align: left;
   }
   /* 
     SEARCH & PROFILE CONTAINER
@@ -130,8 +126,7 @@ body {
     Styling for the action buttons
   */
   .green-btn {
-    background-color: #48cfad;
-    /* Green colour for positive actions */
+    background-color: #157a65;
     color: white;
     border: none;
     margin-top: 15px;
@@ -144,12 +139,11 @@ body {
   }
   
   .green-btn:hover {
-    background-color: #37bc9b;
+    background-color: #1e8c74;
   }
   
   .delete-button {
-    background-color: #ed5565;
-    /* Red for delete/remove actions */
+    background-color: #c82333;
     color: white;
     margin-top: 10px;
     border: none;
@@ -186,9 +180,11 @@ body {
   }
   
   .top-pick {
-    background-color: #edf7ff;
-    border-left: 4px solid #48cfad;
+    background-color: #d9efff;
+    color: #1e3c72; /* match heading color */
   }
+  
+  
   /* 
     WISHLIST BUTTONS
     Style for "Add to wishlist" and "Clear" buttons
@@ -208,7 +204,7 @@ body {
   
   #clear-wishlist,
   .delete-button-wishlist {
-    background-color: #ed5565;
+    background-color: #b22028;
     color: white;
     border: none;
     padding: 10px;
@@ -328,10 +324,9 @@ body {
     padding: 20px;
     border-top: 1px solid #5d9cec;
     font-size: 0.9em;
-    color: #4a4a4a;
+    color: #222222;
     margin-top: 40px;
     text-align: center;
-    background-color: #e6f2ff;
     border-radius: 8px;
   }
   /* 
@@ -367,7 +362,7 @@ body {
   }
   
   .quick-links a {
-    color: #2a52be;
+    color: #10318b;
     text-decoration: none;
     font-size: 0.9em;
     padding: 5px 0;
